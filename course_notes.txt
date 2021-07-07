@@ -1,0 +1,6 @@
+1. JAVASCRIPT FUNDAMENTALS
+    - JavaScript engine process
+        1. Parser (parse a JS file to identify what it does)
+        2. Abstract syntax tree (organize a JS file into logical blocks)
+        3. Interpreter (extract browser-compatible code)
+        4. Compiler (translate code into a language that cab be understiid by the machine)
