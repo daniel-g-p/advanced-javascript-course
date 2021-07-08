@@ -2,5 +2,32 @@
     - JavaScript engine process
         1. Parser (parse a JS file to identify what it does)
         2. Abstract syntax tree (organize a JS file into logical blocks)
-        3. Interpreter (extract browser-compatible code)
-        4. Compiler (translate code into a language that cab be understiid by the machine)
+        3. Interpreter (interpret input into executable code in the same language)
+        4. Compiler (translate code into a language that can be understood by the machine and executed faster)
+    - Modern interpreter / compiler: Just-In-Time (JIT) compiler
+        1. First outputs executable code in its most basic form
+        2. At the same time, the code is interpreted and compiled in order to make i tmore efficient while the basic code runs
+    - JavaScript isn't usually a purely interpreted language
+    - JavaScript keywords and methods to avoid:
+        - eval()
+        - arguments
+        - for ... in
+        - with
+        - delete
+    - Optimization alternatives
+        - Inline caching -> JavaScript caches the output of lines of code that are executed repeatedly
+        - Consistent hidden classes -> Write predictable code where similar actions are done in the same order. Hiddem classes are a type of "workflow" where JavaScript identifies what code it must run and it what order
+    - JavaScript engine components:
+        - Call stack: Orientation means to know where in the code the browser is (First-In-Last-Out)
+        - Memory heap: Storage for variables, functions, classes, etc. 
+    - Stack overflow: Overloading the call stack, for example through recursion of functions
+    - Garbage collection: JavaScript deletes everything that is never actually used in the callstack from the memory heap
+    - Common memory leak causes
+        - Too many global variables
+        - Event listeners
+        - Intervals
+    - JavaScript runs synchronously, but browsers support it ny running specific code asynchronously and reducing the load on the call stack (asynchronous code is only run once the callstack is empty)
+
+2. JAVASCIPT FUNDAMENTALS II
+    - Globally available objects: "Window" and "this"
+    - Lexical environment defines where in the call stack a certain object/function/variable is defined
