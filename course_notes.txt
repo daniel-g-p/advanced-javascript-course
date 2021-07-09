@@ -1,4 +1,4 @@
-1. JAVASCRIPT FUNDAMENTALS
+1. JAVASCRIPT BEHIND THE SCENES
     - JavaScript engine process
         1. Parser (parse a JS file to identify what it does)
         2. Abstract syntax tree (organize a JS file into logical blocks)
@@ -6,7 +6,7 @@
         4. Compiler (translate code into a language that can be understood by the machine and executed faster)
     - Modern interpreter / compiler: Just-In-Time (JIT) compiler
         1. First outputs executable code in its most basic form
-        2. At the same time, the code is interpreted and compiled in order to make i tmore efficient while the basic code runs
+        2. At the same time, the code is interpreted and compiled in order to make it more efficient while the basic code runs
     - JavaScript isn't usually a purely interpreted language
     - JavaScript keywords and methods to avoid:
         - eval()
@@ -31,3 +31,14 @@
 2. JAVASCIPT FUNDAMENTALS II
     - Globally available objects: "Window" and "this"
     - Lexical environment defines where in the call stack a certain object/function/variable is defined
+    - Hoisting: Default behavior of moving all function and variable declarations to the top of the scope
+    - Using "const" and "let" instead of "var" disables problems with hoisting
+    - Calling "arguments" inside of a function returns an array-like object with all passed in arguments
+    - Spread operator (...arguments) allows unlimited arguments and returns an array with them
+    - Variables are always defined primarily in the current execution context
+    - Scope chains always grant access to the parent environment
+    - Prepending "use strict" to a JavaScript file enforces good practice code
+    - "var" uses function scope (available outside the lexical environment), whereas "let" and "const" use block scope (not availabale outside the lexical environment)
+    - Global variables must me held to a minimum by taking advantage of scope
+    - Immediately invoked function expressions (IIFE) call a function upon declaration by wrapping it in brackets and executing it immediately
+    - "this" refers to the object that the called function s called on
