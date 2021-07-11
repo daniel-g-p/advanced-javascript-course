@@ -34,6 +34,7 @@
     - Hoisting: Default behavior of moving all function and variable declarations to the top of the scope
     - Using "const" and "let" instead of "var" disables problems with hoisting
     - Calling "arguments" inside of a function returns an array-like object with all passed in arguments
+    - "arguments" object is not available in arrow functions
     - Spread operator (...arguments) allows unlimited arguments and returns an array with them
     - Variables are always defined primarily in the current execution context
     - Scope chains always grant access to the parent environment
@@ -41,4 +42,63 @@
     - "var" uses function scope (available outside the lexical environment), whereas "let" and "const" use block scope (not availabale outside the lexical environment)
     - Global variables must me held to a minimum by taking advantage of scope
     - Immediately invoked function expressions (IIFE) call a function upon declaration by wrapping it in brackets and executing it immediately
-    - "this" refers to the object that the called function s called on
+    - "this" refers to the object that the called function is called on
+    - "this" target is entirely defined by HOW the function is called
+    - "this" is dynamically scoped by default, meaning that it doesn't matter what lexical scope it is defined in
+    - .bind(TARGET) fixates the "this" keyword to the specified target object, making it lexically scoped
+    - Ways to avoid problems with "this" dynamic scope by setting uit to be lexically scoped:
+        1. Arrow functions
+        2. .bind()
+        3. Set a predefined variable to this
+
+3. CALL, APPLY, BIND
+    - .call(), .apply(), .bind() can be used whenever the "this" keyword is present in a function
+    - .call(TARGET, ARGUMENTS...) rescopes the "this" keyword and calls the function immediately
+    - .apply(TARGET, [ARGUMENTS]) does the exact same thing as .call() but passes arguments in as an array
+    - .bind(TARGET, ARGUMENTS...) does the exact same thing as .call() but returns a function instead of calling it
+    - .bind() can be used to partially fill in an existing function's parameters
+
+4. JAVASCRIPT TYPES
+    - Number, String, Boolean, Undefined, Null, Symbol, object
+    - Arrays and functions are technically objects
+    - One can define a property on a function just like in any normal object
+    - Primitive types (all except object) represent only a single value
+    - Non-primitive types technically encapsulate references to memory rather than actual data
+    - Technically, even primitive types are contained in an object wrapper
+    - "typeof VARIABLE" returns the type of the specified variable
+    - Array.isArray(VARIABLE) tests if a variable is an array in the true sense of the word
+    - Primitive types pass information by value (copy paste)
+    - Objects are passed by reference, meaning that multiple variables can refer to the exact same object
+    - Object.assign(TARGET OBJECT, SOURCE) can be used to actually copy an object and bypass pass by reference
+    - Cloning objects doesn't seal nested objects by default
+    - Combine JSON.parse() and JSON.stringify() to clone full objects including nested objects (slow method)
+    - Objects passed in as function arguments are technically created anew
+    - Double equals run type coercion on the passed in operands to try to forcibly match their types
+    - Object.is(value1, value2) determines if value1 and value2 are actually equal
+    - Empty objects are treated as truthy, but empty arrays are falsy with double equals
+
+5. TYPESCRIPT
+    - Statically typed languages (e.g. C, C#, C++, Java) must define the type of every variable before defining it
+        + Prevents bugs
+        - Slower development
+    - Dynamically typed languages (e.g. JavaScript, Python, PHP, Ruby)
+        + More flexible development
+        - More errors at the time of deployment
+    - Strongly typed languages (e.g. Python, Java, C#, Ruby) don't allow the addition of variables with different types
+    - Weakly typed languages (e.g. JavaScript, C, C++, PHP) do allow the addition of variables with different types
+    - TypeScript is a superset of JavaScript that adds new functionality (JS = TS, but TS != JS)
+
+6. CLOSURES AND PROTOTYPAL INHERITANCE
+    - Calling a function always delivers a "this" keyword as well a set of arguments
+    - Ways to call functions
+        - Direct -> function()
+        - Method -> object.function()
+        - call/apply -> object.call()
+        - new -> new Function()
+    - Functions are treated as callable objects, meaning that properties can be defined on them
+    - Functions can be:
+        - Assigned to variables
+        - Passed in as function arguments
+        - Returned as function output
+    - Higher order functions can either take functions as arguments or return functions as output
+    - Closures store all variable dependencies based on how functions are defined
