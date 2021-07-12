@@ -88,7 +88,7 @@
     - Weakly typed languages (e.g. JavaScript, C, C++, PHP) do allow the addition of variables with different types
     - TypeScript is a superset of JavaScript that adds new functionality (JS = TS, but TS != JS)
 
-6. CLOSURES AND PROTOTYPAL INHERITANCE
+6. CLOSURES
     - Calling a function always delivers a "this" keyword as well a set of arguments
     - Ways to call functions
         - Direct -> function()
@@ -102,3 +102,13 @@
         - Returned as function output
     - Higher order functions can either take functions as arguments or return functions as output
     - Closures store all variable dependencies based on how functions are defined
+
+7. PROTOTYPAL INHERITANCE
+    - Prototypal inheritance defines what standard properties and methods an object / function / array / variable / etc. inherits
+    - Objects first search for methods within the lexical definition scope, if the fail to find it thy will go up the __proto__ chains
+    - Never manually asign the __proto__ property on an object
+    - .hasOwnProperty(PROPERTY) test if an object actually has a property defined (inherited properties will return false)
+    - __proto__ always point to the next elements' prototype property up the scope chain
+    - Object.__proto__ != Object.prototype, __proto__ is just a reference
+    - Function.prototype is one scope level below Object.prototype (functions are just special objects)
+    - Object.create(PARENT) creates a prototypal inheritance to the specified parent
