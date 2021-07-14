@@ -112,3 +112,32 @@
     - Object.__proto__ != Object.prototype, __proto__ is just a reference
     - Function.prototype is one scope level below Object.prototype (functions are just special objects)
     - Object.create(PARENT) creates a prototypal inheritance to the specified parent
+    - OBJECT1.prototype.isPrototypeOf.OBJECT2 tests if the first object's prototype is the __proto__ of the second object
+    - OBJECT1 instanceOf OBJECT2 tests if object2 is the prototype of object 1
+
+8. OBJECT ORIENTED PROGRAMMING
+    - OOP groups related information and functions into groups
+    - Object.create() is a half-assed alternative to JS classes
+    - "new" keyword instantiates a new object based on a "template" (constructor, class, etc.)
+    - "new" points the "this" keyword to the new object being created
+    - Constructor functions must start with a capital letter
+    - Constructor functions can use the prototype property to define dynamically available functions
+    - Constructor function only addd properties that are specified using "this"
+    - Functions have a prototype property, objects don't
+    - Using the "class" keyword together with the "constructor" keyword can build templates/classes that keep all object information and functionality in one place
+    - OBJECT instanceof CLASS tests if the specified object is an instance of the specified class
+    - Posible ways to use the "this" keyword:
+        1. Class-related
+        2. Implicit (default)
+        3. Explicit (call, apply, bind)
+        4. Arrow functions (lexical scope relative to where the function is defined)
+        5. Regular functions (dynamic scope relative to where the function is called)
+    - "class SUBCLASS extends SUPERCLASS" will create a prototypal inheritance upstream to the superclass
+    - Calling super() inside of the subclasses' constructor will call the parents constructor
+    - This only becomes available in a subclass once super() is called
+    - Key concepts of OOP:
+        1. Encapsulation: Structring code into categories/blocks that make logical sense
+        2. Abstraction: Reduce the performance load on the client memory
+        3. Inheritance: Reducing amount of code needed by passing on reusable parents
+        4. Polymorphism: Reusing code while allowing it to behave differently in each situation
+    - 
