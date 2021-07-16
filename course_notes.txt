@@ -140,4 +140,33 @@
         2. Abstraction: Reduce the performance load on the client memory
         3. Inheritance: Reducing amount of code needed by passing on reusable parents
         4. Polymorphism: Reusing code while allowing it to behave differently in each situation
-    - 
+
+9. FUNCTIONAL PROGRAMMING
+    - FP, unlike OOP, splits data (input) and functions (output) into separate blocks
+    - Pure functions do not modify any objects / functions / data outside of its own scope and will always give the same output given the same input
+    - Completely pure functions are impossible to achieve, but the goal of FP is to write the purest code possible
+    - Qualities of good functions:
+        1. Just one task
+        2. Include a return statement
+        3. Don't affect anything outside their scope
+        4. Don't share state with any other function
+        5. Are composable
+        6. Are predictable
+    - Idempotence: When a function that is run repeatedly always returns the same result
+    - Idempotent functions call themselves without any issues
+    - FP helps be more declarative (what to do) rather than imperative (how to do everything)
+    - Immutability: Instead of modifying data, FP clones data and returns a new modified instance of it
+    - Currying: Declaring a function so that its parameters are passed in individually (e.g. fn(a)(b)(c))
+    - Currying takes advantage of closure to retain access to all parameters
+    - Partial application is a slightly looser currying
+        1. Higher order function is declared to return a function
+        2. Returned function is run with a part of the parameters filled
+        3. New function is run with additional parameters to complete the cycle
+    - Memoization functions return different data depending on what's already available and unmodified (e.g. cache)
+    - Composing and piping involve running one piece of data through multiple functions before returning
+    - Arity defines the number of parameters taken by a function and should be kept to a minimum
+    - OOP groupds and interlaces things, FP splits and minimizes them
+    - Problem with OOP: Tight coupling strictly enforces inheritance, meaning that small changes in a superclass can lead to big ripple effects
+    - OOP specifies what objects are
+    - FP specifies what objects do 
+    OBJECT ORIENTED PROGRAMMING GROUPS AND INTERLACES, FUNCTIONAL PROGRAMMING SPLITS AND MINIMIZES

@@ -84,28 +84,81 @@
 
 // SECTION EXERCISE
 
-class Character {
-    constructor(name, weapon) {
-        this.name = name;
-        this.weapon = weapon;
-    }
-    attack() {
-        return 'Attack with ' + this.weapon + "!"
-    }
-}
+// class Character {
+//     constructor(name, weapon) {
+//         this.name = name;
+//         this.weapon = weapon;
+//     }
+//     attack() {
+//         return 'Attack with ' + this.weapon + "!"
+//     }
+// }
 
-class Queen extends Character {
-    constructor(name, weapon, suit) {
-        super(name, weapon)
-        if (["spades", "hearts", "clubs", "diamonds"].includes(suit)) {
-            this.suit = suit
+// class Queen extends Character {
+//     constructor(name, weapon, suit) {
+//         super(name, weapon)
+//         if (["spades", "hearts", "clubs", "diamonds"].includes(suit)) {
+//             this.suit = suit
+//         }
+//     }
+//     attack() {
+//         return super.attack() + " - " + "I am the Queen of " + this.suit + ", now bow down to me!"
+//     }
+// }
+
+// const victoria = new Queen("Victoria", "Army", "hearts");
+
+// const output = victoria.attack();
+
+
+
+// FUNCTIONAL PROGRAMMING APPROACH
+
+const create = {
+    character(name, weapon) {
+        return {
+            name,
+            weapon
         }
-    }
-    attack() {
-        return super.attack() + " - " + "I am the Queen of " + this.suit + ", now bow down to me!"
+    },
+    Jack(name, weapon) {
+        const jack = this.character(name, weapon);
+        jack.enchant = get.enchant(30);
+        return jack;
+    },
+    Queen(name, weapon) {
+        const queen = this.character(name, weapon);
+        queen.attack = get.attack(25);
+        queen.heal = get.heal(50);
+        return queen;
+    },
+    King(name, weapon) {
+        const king = this.character(name, weapon);
+        king.attack = get.attack(75);
+        king.heal = get.heal(10);
+        king.enchant = get.enchant(2);
+        return king;
     }
 }
 
-const victoria = new Queen("Victoria", "Army", "hearts");
+const get = {
+    attack(damage) {
+        return function() {
+            return `${this.name} attacks with ${this.weapon}! Damage: ${damage}`
+        }
+    },
+    heal(heal) {
+        return function() {
+            return `${this.name} regains ${heal} health points!`
+        }
+    },
+    enchant(time) {
+        return function() {
+            return `${this.name} enchants you for ${time} seconds!`
+        }
+    },
+}
 
-const output = victoria.attack();
+const j = create.Jack("Peter", "Bow");
+const q = create.Queen("Victoria", "Sword");
+const k = create.King("Max", "Army");
