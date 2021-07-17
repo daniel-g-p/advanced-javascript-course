@@ -168,5 +168,20 @@
     - OOP groupds and interlaces things, FP splits and minimizes them
     - Problem with OOP: Tight coupling strictly enforces inheritance, meaning that small changes in a superclass can lead to big ripple effects
     - OOP specifies what objects are
-    - FP specifies what objects do 
-    OBJECT ORIENTED PROGRAMMING GROUPS AND INTERLACES, FUNCTIONAL PROGRAMMING SPLITS AND MINIMIZES
+    - FP specifies what objects do
+    - Composition can often be better than inheritance for scalability
+    - OOP vs FP
+        - Many operations on few elements vs few operations on many elements
+        - Stateless vs stateful
+        - Pure vs side effects
+        - Declarative vs imperative
+
+10. ASYNCHRONOUS JAVASCRIPT
+    - 3 priority levels:
+        1. Call stack
+        2. Job queue
+        3. Callback queue
+    - Promise.all(PROMISEARRAY) parallely runs an array of promises and and returns once all promises have been resolved
+    - Promise.race(PROMISEARRAY) parallely runs an array of promises and returns as soon as any of the promises has been resolved
+    - Promise.allSettled(PROMISEARRAY) parallely runs an array of promises and returns as soon as all of them are resolved or rejected
+    - Web workers are in charge of running background operations
