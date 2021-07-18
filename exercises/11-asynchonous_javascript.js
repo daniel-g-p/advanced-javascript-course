@@ -34,11 +34,3 @@ const sequence = async(...promises) => {
 parallel(a(), b(), c());
 race(a(), b(), c());
 sequence(a, b, c);
-
-// parallel(a(), b(), c());
-
-// 1. PARALLEL PROMISES
-
-// 2. SEQUENTIAL PROMISES
-
-// 3. RACING PROMISES

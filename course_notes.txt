@@ -185,3 +185,26 @@
     - Promise.race(PROMISEARRAY) parallely runs an array of promises and returns as soon as any of the promises has been resolved
     - Promise.allSettled(PROMISEARRAY) parallely runs an array of promises and returns as soon as all of them are resolved or rejected
     - Web workers are in charge of running background operations
+
+11. MODULES
+    - Immediately invoked function expressions are the classic way to modularize code
+    - CommonJS and AMD were the second-generation solutions for modularization
+    - "export" and "import" keywords allow to pass scripts between files in vanilla JavaScript
+    - Scripts that import modules must be specified as type="module" in order to workers
+
+12. ERROR HANDLING
+    - "new Error(MESSAGE)" creates a new error object with 3 properties: name, message, stack
+    - Types of Error objects
+        - Error
+        - SyntaxError
+        - ReferenceError
+    - try { code that is supposed to run } catch { code that handles errors if thrown } finally { code that always runs at the end } handles error synchronously
+    - Thrown errors interrupt the remaining code within the same execution context
+    - try-catch-finally blocks can be nested
+    - Promises without a catch statement will never even notify you of thrown errors -> ALWAYS have a catch statement on promises
+    - Promises have a .finally method too
+    - In browser javascript, errors will be caught recursively up the call stack (e.g. a nested promise that throws an error can be caught by the parents error handlers)
+    - In Node JS, promises errors always have to be caught explicitly in the same execution context
+    - Async/await allow to use synchronous try/catch to handle errors
+    - new ERRORTYPE extends ERROR creates custom error classes
+    

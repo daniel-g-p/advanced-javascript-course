@@ -163,11 +163,3 @@ const fn = {
         refund ? this.refund(name, refund) : null;
     },
 }
-
-functions.newUser("Daniel", true);
-functions.newProduct("Book", 10);
-functions.newProduct("Laptop", 749);
-functions.newProduct("Mouse", 39);
-functions.order("Daniel", ["Laptop", "Mouse", "Book", "Mouse"], "Mouse");
-
-console.log(data.users[0]);
