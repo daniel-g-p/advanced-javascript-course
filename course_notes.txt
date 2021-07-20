@@ -207,4 +207,25 @@
     - In Node JS, promises errors always have to be caught explicitly in the same execution context
     - Async/await allow to use synchronous try/catch to handle errors
     - new ERRORTYPE extends ERROR creates custom error classes
-    
+
+13. DATA STRUCTURES
+    - Every bit of data is stored in bits in RAM Storage
+    - RAM takes workload off the CPU by serving previously used assets
+    - Main operations on data structures:
+        - Insertion
+        - Deletion
+        - Searching
+        - Sorting
+        - Traversing
+        - Access
+    - Arrays
+        - Sequential collections of individual data points
+        - Push -> Very fast: O(1)
+        - Pop -> Very fast: O(1)
+        - Unshift -> Not as fast: O(n)
+        - Splice -> Not as fast:  O(n)
+    - Hash Tables
+        - Basically objects containing key value pairs
+        - Associates keys and values
+        - Keys are run through a hashing function and then used as keys in a table
+        - Hash collision occurs when multiple items are assigned to the exact same space in memory
